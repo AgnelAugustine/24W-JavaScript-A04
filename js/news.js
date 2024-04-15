@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function setStudentInfo() {
     const studentInfo = document.getElementById('student-info');
-    studentInfo.textContent = 'Name: Agnel Augustine, Student Number: 200555888';
+    studentInfo.textContent = 'Name: Agnel Augustine, Student Number: 20055588';
 }
 
 async function fetchNews() {
@@ -14,7 +14,9 @@ async function fetchNews() {
 
     try {
         const response = await fetch(url);
+        console.log("HTTP Response:", response);
         const data = await response.json();
+        console.log("Parsed Data:", data);
         displayNews(data.articles);
     } catch (error) {
         console.error('Error fetching news:', error);
